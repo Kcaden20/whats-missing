@@ -1,0 +1,222 @@
+/* FONTS */
+@font-face {
+    font-family: 'cartridgebold';
+    src: url('assets/05_fonts/cartridge-bold-webfont.woff') format('woff'),
+         url('assets/05_fonts/cartridge-bold-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kyototwtext800';
+    src: url('assets/05_fonts/kyototw-text800-webfont.woff') format('woff'),
+         url('assets/05_fonts/kyototw-text800-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cartridgeregular';
+    src: url('assets/05_fonts/cartridge-regular-webfont.woff2') format('woff2'),
+         url('assets/05_fonts/cartridge-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* TAGS */
+body {
+    background-color: black;
+    margin: 0;
+    cursor: url(assets/cur-reg.png), auto
+}
+
+section {
+    padding: 1em;
+    height: calc(100vh - 2em);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 15% 15% 70%;
+}
+
+h1, h2, p, button {
+    color: white;
+}
+
+h1, h2 { 
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'cartridgebold';
+
+}
+
+h1 {font-size: 1.5em;}
+h2 {
+    font-size: 2em;
+    font-family: 'kyototwtext800';
+}
+
+p, blockquote {
+    font-family: 'cartridgeregular';
+    font-size: 1.25em;
+}
+
+p, blockquote {
+    letter-spacing: .03em;
+    line-height: 1.15em;
+    padding: 1em 2em;
+}
+
+a, a:visited {
+    color: gold;
+    cursor: url(assets/cur-sel.png), auto;
+}
+blockquote {
+    color: CornflowerBlue;
+    font-style: italic;
+}
+
+button {
+    background-color: black;
+    font-family: 'kyototwtext800';
+    text-transform: capitalize;
+    font-size: 2em;
+    border: none;
+    padding: .5em 1em;
+    cursor: url(assets/cur-sel.png), auto;
+    box-shadow: 2px 1px 10px 5px gold;
+}
+
+
+picture {
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+picture img {
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
+    max-height: 60vh;
+    margin: 1em;
+    box-shadow: 2px 1px 10px 5px gold;
+}
+
+button {    
+    margin: 0 auto;
+    display: none;
+}
+
+
+
+/* CLASSES */
+button.live {display: block;}
+
+picture.two-imgs, picture.three-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1em;
+}
+
+picture.two-imgs img, picture.three-imgs img  {justify-self: center}
+
+picture.three-imgs {grid-template-columns: 1fr 1fr 1fr;}
+
+
+/* IDS */
+#stanza-one button:hover {
+    color: gold;
+}
+
+#stanza-two button, #stanza-two picture img {
+    box-shadow: 2px 1px 10px 5px CornflowerBlue;
+}
+#stanza-two button:hover {color: CornflowerBlue;}
+
+#stanza-three, #stanza-five {
+    height: inherit;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+#stanza-three button {box-shadow: 2px 1px 10px 5px red;}
+#stanza-three button {font-size: 1em;}
+#stanza-three button:hover { color: red;}
+#stanza-three img, #stanza-five img { 
+    justify-self: center;
+    max-height: 75vh;
+}
+#stanza-three button:last-of-type {margin-bottom: 50px;}
+
+#stanza-four button, #stanza-four picture img {
+    box-shadow: 2px 1px 10px 5px red;
+}
+#stanza-four button:hover {color: red;}
+
+#stanza-five button {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+
+/* Priority Classes */
+.pointer-events-none {pointer-events: none;}
+.no-shadow {box-shadow: none !important;}
+.display-none {display: none !important;}
+
+/* Bar Classes */
+.top-bar, .bottom-bar {
+    background-image: linear-gradient(gold, transparent);
+    width: 100%;
+    height: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.bottom-bar {
+    top: inherit;
+    bottom: 0;
+    background-image: linear-gradient(transparent, gold);
+}
+
+.blue-tbar {
+    background-image: linear-gradient(CornflowerBlue, transparent);  
+}
+
+.blue-bbar {
+    background-image: linear-gradient(transparent, CornflowerBlue);  
+}
+
+.red-tbar {
+    background-image: linear-gradient(red, transparent);   
+}
+
+.red-bbar {
+    background-image: linear-gradient(transparent, red);   
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.15em;
+    }
+        button {
+            font-size: 1.25em;
+        }
+    blockquote, p {
+        padding: 1em;
+    }
+  }
